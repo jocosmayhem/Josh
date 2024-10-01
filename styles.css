@@ -27,7 +27,4 @@ input:focus {
     background-color: #e0ffff; /* Light cyan on focus */
 }
 
-.container {
-    display: flex; /* Use flexbox to create a column layout */
-    flex-direction: column; /* Arrange items in a column */
-    align-items: center; /* Center items horizontally */
+
