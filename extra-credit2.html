@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Game</title>
+    <script>
+        let num1, num2;
+
+        function newQuestion() {
+            num1 = Math.floor(Math.random() * 10);
+            num2 = Math.floor(Math.random() * 10);
+            document.getElementById('question').innerText = `How much is ${num1} times ${num2}?`;
+        }
+
+        function checkAnswer() {
+            const answer = parseInt(document.getElementById('answer').value);
+            if (answer === num1 * num2) {
+                document.getElementById('result').innerText = "Very good!";
+            } else {
+                document.getElementById('result').innerText = "No. Please try again.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Multiplication Game</h1>
+    <p id="question"></p>
+    <input type="number" id="answer">
+    <button onclick="checkAnswer()">Submit</button>
+    <p id="result"></p>
+    <button onclick="newQuestion()">New Question</button>
+
+    <a href="hw3.html">Back to Homework 3 Main</a>
+
+    <script>
+        newQuestion();
+    </script>
+</body>
+</html>
 
