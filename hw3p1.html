@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grades</title>
+    <script>
+        function calculateGrade() {
+            const hwAvg = parseInt(document.getElementById('hwAvg').value);
+            const midExam = parseInt(document.getElementById('midExam').value);
+            const finalExam = parseInt(document.getElementById('finalExam').value);
+            const participation = parseInt(document.getElementById('participation').value);
+            const output = document.getElementById('output');
+
+            if (isNaN(hwAvg) || isNaN(midExam) || isNaN(finalExam) || isNaN(participation) ||
+                hwAvg < 0 || hwAvg > 100 || midExam < 0 || midExam > 100 || finalExam < 0 || finalExam > 100 || participation < 0 || participation > 100) {
+                output.innerText = 'Error: Please enter valid numbers between 0 and 100.';
+                return;
+            }
+
+            const finalAverage = Math.round((0.5 * hwAvg) + (0.2 * midExam) + (0.2 * finalExam) + (0.1 * participation));
+            let grade = '';
+
+            if (finalAverage >= 90) {
+                grade = 'A';
+            } else if (finalAverage >= 80) {
+                grade = 'B';
+            } else if (finalAverage >= 70) {
+                grade = 'C';
+            } else if (finalAverage >= 60) {
+                grade = 'D';
+            } else {
+                grade = 'F';
+            }
+
+            output.innerText = `Final Average: ${finalAverage}, Grade: ${grade}`;
+
+            if (grade === 'D' || grade === 'F') {
+                output.innerText += "\nStudent must retake the course.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Student Grades</h1>
+    <form>
+        <label>Homework Average: <input type="number" id="hwAvg"></label><br>
+        <label>Mid-Term Exam Score: <input type="number" id="midExam"></label><br>
+        <label>Final Exam Score: <input type="number" id="finalExam"></label><br>
+        <label>Participation: <input type="number" id="participation"></label><br><br>
+
+        <button type="button" onclick="calculateGrade()">Submit</button>
+        <button type="reset">Clear</button>
+    </form>
+
+    <p id="output"></p>
+
+    <a href="hw3.html">Back to Homework 3 Main</a>
+</body>
+</html>
