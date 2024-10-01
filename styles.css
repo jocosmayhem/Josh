@@ -5,10 +5,10 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('maxresdefault.jpg'); /* Use your uploaded file as background */
-    background-size: cover; /* Ensure the image covers the entire page */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent the background from repeating */
+    background-image: url('maxresdefault.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
 }
 
 h1 {
