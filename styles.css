@@ -5,7 +5,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url('/mnt/data/image.png'); /* Use your uploaded file as background */
+    background-image: url('https://i.ytimg.com/vi/-2LJ0pCfz6k/maxresdefault.jpg'); /* Use your uploaded file as background */
     background-size: cover; /* Ensure the image covers the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
