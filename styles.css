@@ -1,7 +1,7 @@
 body {
     display: flex;
-    justify-content: center; /* Keeps content centered horizontally */
-    align-items: center; /* Centers content vertically */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -29,8 +29,7 @@ input:focus {
 }
 
 table {
-    width: auto; /* Set table width to auto for better layout */
-    margin: auto; /* Center the table */
+    width: 100%;
     border-collapse: collapse;
 }
 
