@@ -1,11 +1,13 @@
-
 body {
     display: flex;
+    justify-content: center; /* Keeps content centered horizontally */
+    align-items: center; /* Centers content vertically */
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     background-image: url('maxresdefault.jpg'); 
     background-size: cover; 
+    background-position: center; 
     background-repeat: no-repeat;
 }
 
@@ -27,7 +29,8 @@ input:focus {
 }
 
 table {
-    width: 100%;
+    width: auto; /* Set table width to auto for better layout */
+    margin: auto; /* Center the table */
     border-collapse: collapse;
 }
 
