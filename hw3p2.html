@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,15 +7,33 @@
     <link rel="stylesheet" href="styles.css">
     <script>
         function calculateCommission() {
-            const item1 = parseInt(document.getElementById('item1').value) || 0;
-            const item2 = parseInt(document.getElementById('item2').value) || 0;
-            const item3 = parseInt(document.getElementById('item3').value) || 0;
-            const item4 = parseInt(document.getElementById('item4').value) || 0;
+            const item1Qty = parseInt(document.getElementById('item1').value) || 0;
+            const item2Qty = parseInt(document.getElementById('item2').value) || 0;
+            const item3Qty = parseInt(document.getElementById('item3').value) || 0;
+            const item4Qty = parseInt(document.getElementById('item4').value) || 0;
 
-            const totalSales = (item1 * 20.99) + (item2 * 12.75) + (item3 * 9.95) + (item4 * 35.89);
+            const item1Price = 20.99;
+            const item2Price = 12.75;
+            const item3Price = 9.95;
+            const item4Price = 35.89;
+
+            const item1Total = item1Qty * item1Price;
+            const item2Total = item2Qty * item2Price;
+            const item3Total = item3Qty * item3Price;
+            const item4Total = item4Qty * item4Price;
+
+            const totalSales = item1Total + item2Total + item3Total + item4Total;
             const commission = (totalSales * 0.09) + 250;
+
+            // Update the totals in the form
             document.getElementById('totalSales').value = totalSales.toFixed(2);
             document.getElementById('totalEarnings').value = commission.toFixed(2);
+
+            // Update item total costs in the form
+            document.getElementById('item1Cost').value = item1Total.toFixed(2);
+            document.getElementById('item2Cost').value = item2Total.toFixed(2);
+            document.getElementById('item3Cost').value = item3Total.toFixed(2);
+            document.getElementById('item4Cost').value = item4Total.toFixed(2);
         }
     </script>
 </head>
@@ -25,16 +42,22 @@
     <form>
         <label>Salesperson Name: <input type="text" id="salesperson"></label><br><br>
 
-        <label>Item 1 (20.99): <input type="number" id="item1"></label><br>
-        <label>Item 2 (12.75): <input type="number" id="item2"></label><br>
-        <label>Item 3 (9.95): <input type="number" id="item3"></label><br>
-        <label>Item 4 (35.89): <input type="number" id="item4"></label><br><br>
+        <label>Item 1 Quantity: <input type="number" id="item1" min="0" value="0"></label><br>
+        <label>Item 2 Quantity: <input type="number" id="item2" min="0" value="0"></label><br>
+        <label>Item 3 Quantity: <input type="number" id="item3" min="0" value="0"></label><br>
+        <label>Item 4 Quantity: <input type="number" id="item4" min="0" value="0"></label><br><br>
 
         <button type="button" onclick="calculateCommission()">Calculate</button>
     </form>
 
-    <label>Total Sales: <input type="text" id="totalSales" readonly></label><br>
-    <label>Total Earnings: <input type="text" id="totalEarnings" readonly></label><br>
+    <h2>Cost Breakdown</h2>
+    <label>Item 1 Total Cost: $<input type="text" id="item1Cost" readonly></label><br>
+    <label>Item 2 Total Cost: $<input type="text" id="item2Cost" readonly></label><br>
+    <label>Item 3 Total Cost: $<input type="text" id="item3Cost" readonly></label><br>
+    <label>Item 4 Total Cost: $<input type="text" id="item4Cost" readonly></label><br><br>
+
+    <label>Total Sales: $<input type="text" id="totalSales" readonly></label><br>
+    <label>Total Earnings: $<input type="text" id="totalEarnings" readonly></label><br>
 
     <a href="hw3.html">Back to Homework 3 Main Page</a>
 </body>
