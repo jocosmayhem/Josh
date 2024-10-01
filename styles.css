@@ -1,6 +1,5 @@
 body {
     display: flex;
-    justify-content: center; /* Keeps content centered horizontally */
     align-items: center; /* Centers content vertically */
     height: 100vh;
     margin: 0;
