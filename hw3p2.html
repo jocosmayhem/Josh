@@ -17,48 +17,47 @@
             const item3Price = 9.95;
             const item4Price = 35.89;
 
+            // Calculate total sales for each item
             const item1Total = item1Qty * item1Price;
             const item2Total = item2Qty * item2Price;
             const item3Total = item3Qty * item3Price;
             const item4Total = item4Qty * item4Price;
 
+            // Calculate overall totals
             const totalSales = item1Total + item2Total + item3Total + item4Total;
             const commission = (totalSales * 0.09) + 250;
 
             // Update the totals in the form
+            document.getElementById('item1QtySold').value = item1Qty;
+            document.getElementById('item2QtySold').value = item2Qty;
+            document.getElementById('item3QtySold').value = item3Qty;
+            document.getElementById('item4QtySold').value = item4Qty;
+
+            document.getElementById('item1Total').value = item1Total.toFixed(2);
+            document.getElementById('item2Total').value = item2Total.toFixed(2);
+            document.getElementById('item3Total').value = item3Total.toFixed(2);
+            document.getElementById('item4Total').value = item4Total.toFixed(2);
+
             document.getElementById('totalSales').value = totalSales.toFixed(2);
             document.getElementById('totalEarnings').value = commission.toFixed(2);
-
-            // Update item total costs in the form
-            document.getElementById('item1Cost').value = item1Total.toFixed(2);
-            document.getElementById('item2Cost').value = item2Total.toFixed(2);
-            document.getElementById('item3Cost').value = item3Total.toFixed(2);
-            document.getElementById('item4Cost').value = item4Total.toFixed(2);
         }
     </script>
 </head>
 <body>
     <h1>Salesperson Commission</h1>
     <form>
-        <label>Salesperson Name: <input type="text" id="salesperson"></label><br><br>
-
-        <label>Item 1 Quantity: <input type="number" id="item1" min="0" value="0"></label><br>
-        <label>Item 2 Quantity: <input type="number" id="item2" min="0" value="0"></label><br>
-        <label>Item 3 Quantity: <input type="number" id="item3" min="0" value="0"></label><br>
-        <label>Item 4 Quantity: <input type="number" id="item4" min="0" value="0"></label><br><br>
-
-        <button type="button" onclick="calculateCommission()">Calculate</button>
-    </form>
-
-    <h2>Cost Breakdown</h2>
-    <label>Item 1 Total Cost: $<input type="text" id="item1Cost" readonly></label><br>
-    <label>Item 2 Total Cost: $<input type="text" id="item2Cost" readonly></label><br>
-    <label>Item 3 Total Cost: $<input type="text" id="item3Cost" readonly></label><br>
-    <label>Item 4 Total Cost: $<input type="text" id="item4Cost" readonly></label><br><br>
-
-    <label>Total Sales: $<input type="text" id="totalSales" readonly></label><br>
-    <label>Total Earnings: $<input type="text" id="totalEarnings" readonly></label><br>
-
-    <a href="hw3.html">Back to Homework 3 Main Page</a>
-</body>
-</html>
+        <table>
+            <tr>
+                <td><label>Seller's Name:</label></td>
+                <td><input type="text" id="salesperson"></td>
+            </tr>
+            <tr>
+                <td><label>Item 1:</label></td>
+                <td><input type="number" id="item1" min="0" value="0"></td>
+                <td><label>Qty Sold:</label></td>
+                <td><input type="text" id="item1QtySold" readonly></td>
+                <td><label>Total:</label></td>
+                <td><input type="text" id="item1Total" readonly></td>
+            </tr>
+            <tr>
+     
