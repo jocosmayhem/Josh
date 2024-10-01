@@ -1,6 +1,14 @@
 body {
-    background-color: #e6ffe6; /* Light green background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
     font-family: Arial, sans-serif;
+    background-image: url('/mnt/data/image.png'); /* Use your uploaded file as background */
+    background-size: cover; /* Ensure the image covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
 }
 
 h1 {
