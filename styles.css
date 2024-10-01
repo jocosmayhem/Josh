@@ -1,7 +1,7 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center; /* Centers content vertically */
+    align-items: center;
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,6 +13,7 @@ body {
 
 h1 {
     color: #003300;
+    text-align: center; /* Center the heading */
 }
 
 a {
@@ -28,4 +29,31 @@ input:focus {
     background-color: #e0ffff; /* Light cyan on focus */
 }
 
+table {
+    width: 80%; /* Adjust width as needed */
+    margin: auto; /* Center the table */
+    border-collapse: collapse;
+}
 
+table, th, td {
+    border: 1px solid black;
+    text-align: left; /* Align text to the left for better readability */
+    padding: 8px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Optional: add some styling to the button */
+button {
+    background-color: #009900;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #007700; /* Darken on hover */
+}
