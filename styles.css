@@ -9,6 +9,7 @@ body {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
+    background-color: #f0f0f0; /* Fallback color */
 }
 
 h1 {
@@ -33,6 +34,7 @@ table {
     width: 80%; /* Adjust width as needed */
     margin: auto; /* Center the table */
     border-collapse: collapse;
+    margin-bottom: 20px; /* Add space below the table */
 }
 
 table, th, td {
@@ -52,8 +54,15 @@ button {
     border: none;
     padding: 10px 20px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 button:hover {
     background-color: #007700; /* Darken on hover */
 }
+
+button:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px #009900; /* Add a custom focus effect */
+}
+
