@@ -13,49 +13,61 @@
             const participation = parseInt(document.getElementById('participation').value);
             const output = document.getElementById('output');
 
-            if (isNaN(hwAvg) || isNaN(midExam) || isNaN(finalExam) || isNaN(participation) ||
-                hwAvg < 0 || hwAvg > 100 || midExam < 0 || midExam > 100 || finalExam < 0 || finalExam > 100 || participation < 0 || participation > 100) {
+            // Validate input
+            if ([hwAvg, midExam, finalExam, participation].some(isNaN) || 
+                [hwAvg, midExam, finalExam, participation].some(value => value < 0 || value > 100)) {
                 output.innerText = 'Error: Please enter valid numbers between 0 and 100.';
                 return;
             }
 
+            // Calculate final average and grade
             const finalAverage = Math.round((0.5 * hwAvg) + (0.2 * midExam) + (0.2 * finalExam) + (0.1 * participation));
-            let grade = '';
+            let grade = getGrade(finalAverage);
 
-            if (finalAverage >= 90) {
-                grade = 'A';
-            } else if (finalAverage >= 80) {
-                grade = 'B';
-            } else if (finalAverage >= 70) {
-                grade = 'C';
-            } else if (finalAverage >= 60) {
-                grade = 'D';
-            } else {
-                grade = 'F';
-            }
-
+            // Display result
             output.innerText = `Final Average: ${finalAverage}, Grade: ${grade}`;
-
             if (grade === 'D' || grade === 'F') {
                 output.innerText += "\nStudent must retake the course.";
             }
+        }
+
+        function getGrade(finalAverage) {
+            if (finalAverage >= 90) return 'A';
+            if (finalAverage >= 80) return 'B';
+            if (finalAverage >= 70) return 'C';
+            if (finalAverage >= 60) return 'D';
+            return 'F';
         }
     </script>
 </head>
 <body>
     <h1>Student Grades</h1>
-    <form>
-        <label>Homework Average: <input type="number" id="hwAvg" name="hwAvg"></label><br>
-        <label>Mid-Term Exam Score: <input type="number" id="midExam" name="midExam"></label><br>
-        <label>Final Exam Score: <input type="number" id="finalExam" name="finalExam"></label><br>
-        <label>Participation: <input type="number" id="participation" name="participation"></label><br><br>
+    <div class="container">
+        <form id="gradeForm">
+            <div class="form-group">
+                <label for="hwAvg">Homework Average:</label>
+                <input type="number" id="hwAvg" name="hwAvg" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="midExam">Mid-Term Exam Score:</label>
+                <input type="number" id="midExam" name="midExam" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="finalExam">Final Exam Score:</label>
+                <input type="number" id="finalExam" name="finalExam" min="0" max="100" required>
+            </div>
+            <div class="form-group">
+                <label for="participation">Participation:</label>
+                <input type="number" id="participation" name="participation" min="0" max="100" required>
+            </div>
 
-        <button type="button" onclick="calculateGrade()">Submit</button>
-        <button type="reset">Clear</button>
-    </form>
-
-    <p id="output"></p>
-
-    <a href="hw3.html">Back to Homework 3 Main Page</a>
+            <div class="form-group">
+                <button type="button" onclick="calculateGrade()">Submit</button>
+                <button type="reset">Clear</button>
+            </div>
+        </form>
+        <p id="output"></p>
+        <a href="hw3.html">Back to Homework 3 Main Page</a>
+    </div>
 </body>
 </html>
