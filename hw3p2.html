@@ -2,94 +2,73 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salesperson Commission</title>
+    <meta name="description" content="Part 2 - Basic Calculations">
+    <title>Part 2 - Basic Calculations</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        const ITEM_PRICES = [20.99, 12.75, 9.95, 35.89];
-
-        function calculateCommission() {
-            const quantities = [
-                parseInt(document.getElementById('item1').value) || 0,
-                parseInt(document.getElementById('item2').value) || 0,
-                parseInt(document.getElementById('item3').value) || 0,
-                parseInt(document.getElementById('item4').value) || 0
-            ];
-
-            const itemTotals = quantities.map((qty, index) => qty * ITEM_PRICES[index]);
-            const totalSales = itemTotals.reduce((acc, total) => acc + total, 0);
-            const commission = (totalSales * 0.09) + 250;
-
-            // Update the UI with calculated values
-            updateUI(quantities, itemTotals, totalSales, commission);
-        }
-
-        function updateUI(quantities, itemTotals, totalSales, commission) {
-            quantities.forEach((qty, index) => {
-                document.getElementById(`item${index + 1}QtySold`).value = qty;
-                document.getElementById(`item${index + 1}Total`).value = itemTotals[index].toFixed(2);
-            });
-
-            document.getElementById('totalSales').value = totalSales.toFixed(2);
-            document.getElementById('totalEarnings').value = commission.toFixed(2);
-        }
-
-        function clearFields() {
-            document.getElementById('salesperson').value = '';
-            for (let i = 1; i <= 4; i++) {
-                document.getElementById(`item${i}`).value = 0;
-                document.getElementById(`item${i}QtySold`).value = '';
-                document.getElementById(`item${i}Total`).value = '';
-            }
-            document.getElementById('totalSales').value = '';
-            document.getElementById('totalEarnings').value = '';
-        }
-    </script>
 </head>
 <body>
-    <h1>Salesperson Commission</h1>
-    <div class="container">
-        <div class="form-group">
-            <label for="salesperson">Seller's Name:</label>
-            <input type="text" id="salesperson" required>
-        </div>
-        <div class="form-group">
-            <label for="item1">Item 1 ($20.99):</label>
-            <input type="number" id="item1" min="0" value="0">
-            <input type="text" id="item1QtySold" readonly>
-            <input type="text" id="item1Total" readonly>
-        </div>
-        <div class="form-group">
-            <label for="item2">Item 2 ($12.75):</label>
-            <input type="number" id="item2" min="0" value="0">
-            <input type="text" id="item2QtySold" readonly>
-            <input type="text" id="item2Total" readonly>
-        </div>
-        <div class="form-group">
-            <label for="item3">Item 3 ($9.95):</label>
-            <input type="number" id="item3" min="0" value="0">
-            <input type="text" id="item3QtySold" readonly>
-            <input type="text" id="item3Total" readonly>
-        </div>
-        <div class="form-group">
-            <label for="item4">Item 4 ($35.89):</label>
-            <input type="number" id="item4" min="0" value="0">
-            <input type="text" id="item4QtySold" readonly>
-            <input type="text" id="item4Total" readonly>
-        </div>
-        <div class="form-group">
-            <label for="totalSales">Total Sales:</label>
-            <input type="text" id="totalSales" readonly>
-        </div>
-        <div class="form-group">
-            <label for="totalEarnings">Total Earnings:</label>
-            <input type="text" id="totalEarnings" readonly>
-        </div>
-        <div class="form-group">
-            <button type="button" onclick="calculateCommission()">Calculate</button>
-            <button type="button" onclick="clearFields()">Clear</button>
-        </div>
-        <a href="hw3.html">Back to Homework 3 Main Page</a>
-    </div>
+    <h1>Part 2 - Basic Calculations</h1>
+    <table>
+        <tr>
+            <td>
+                <form id="calcForm">
+                    <table>
+                        <tr>
+                            <td><label for="num1">Number 1:</label></td>
+                            <td><input type="number" id="num1"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="num2">Number 2:</label></td>
+                            <td><input type="number" id="num2"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="num3">Number 3:</label></td>
+                            <td><input type="number" id="num3"></td>
+                        </tr>
+                        <tr>
+                            <td><button type="button" onclick="calculate()">Calculate</button></td>
+                            <td><button type="button" onclick="clearForm()">Clear</button></td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <p id="results"></p>
+
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let num3 = parseFloat(document.getElementById("num3").value);
+
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                document.getElementById("results").textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            let sum = num1 + num2 + num3;
+            let avg = sum / 3;
+            let prod = num1 * num2 * num3;
+            let min = Math.min(num1, num2, num3);
+            let max = Math.max(num1, num2, num3);
+
+            document.getElementById("results").innerHTML = 
+                "Sum: " + sum + "<br>" +
+                "Average: " + avg + "<br>" +
+                "Product: " + prod + "<br>" +
+                "Minimum: " + min + "<br>" +
+                "Maximum: " + max;
+        }
+
+        function clearForm() {
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("num3").value = "";
+            document.getElementById("results").textContent = "";
+        }
+    </script>
+
+    <a href="hw2.html">Back to Homework 2 Main Page</a>
 </body>
 </html>
