@@ -32,21 +32,32 @@
 </head>
 <body>
     <h1>Multiplication Game</h1>
-    
-    <!-- Question label for accessibility -->
-    <label id="question" for="answer"></label><br>
-    <input type="number" id="answer" aria-labelledby="question">
-    
-    <!-- Buttons for submit and new question -->
-    <div id="buttons">
-        <button onclick="checkAnswer()">Submit</button>
-        <button onclick="newQuestion()">New Question</button>
+
+    <div class="game-container">
+        <!-- Question label for accessibility -->
+        <div class="question-container">
+            <label id="question" for="answer"></label><br>
+        </div>
+        
+        <div class="input-container">
+            <input type="number" id="answer" aria-labelledby="question">
+        </div>
+        
+        <!-- Buttons for submit and new question -->
+        <div id="buttons">
+            <button onclick="checkAnswer()">Submit</button>
+            <button onclick="newQuestion()">New Question</button>
+        </div>
+        
+        <div class="result-container">
+            <p id="result"></p>
+        </div>
     </div>
-    
-    <p id="result"></p>
 
     <!-- Link back to homework -->
-    <a href="hw3.html">Back to Homework 3 Main Page</a>
+    <div class="back-link">
+        <a href="hw3.html">Back to Homework 3 Main Page</a>
+    </div>
 
     <script>
         newQuestion();  // Generate the first question when the page loads
