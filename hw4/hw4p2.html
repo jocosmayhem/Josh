@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 - Compound Interest Calculation">
+    <title>Part 2 - Compound Interest Calculation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Learn about Compound Interest</h1>
+    <div id="tables"></div>
+
+    <script>
+        const principal = 1000;
+        const rates = [0.05, 0.06, 0.07];
+        const years = 5;
+
+        let tableHTML = '';
+
+        // Create tables for each interest rate
+        rates.forEach(rate => {
+            tableHTML += `<table>
+                <tr>
+                    <th>Year</th>
+                    <th>Amount on deposit</th>
+                    <th>Interest Rate</th>
+                </tr>`;
+            for (let year = 1; year <= years; year++) {
+                let amount = principal * Math.pow((1 + rate), year);
+                tableHTML += `<tr>
+                    <td>${year}</td>
+                    <td>${amount.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>
+                    <td>${(rate * 100).toFixed(0)}%</td>
+                </tr>`;
+            }
+            tableHTML += '</table><br>';
+        });
+
+        document.getElementById("tables").innerHTML = tableHTML;
+    </script>
+
+    <div class="back-link">
+        <a href="hw4.html">Back to Homework 4 Main Page</a>
+    </div>
+</body>
+</html>
 

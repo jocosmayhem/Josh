@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1 - Looping Calculations">
+    <title>Part 1 - Looping Calculations</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Part 1 - Looping Calculations</h1>
+    <div id="results1"></div>
+    <div id="results2"></div>
+
+    <script>
+        // Part 1: For Loop - Sum and Product of every fourth integer from 5 to 25
+        let product1 = 1;
+        let sum1 = 0;
+        let resultText1 = "The result of ";
+
+        for (let i = 5; i <= 25; i += 4) {
+            product1 *= i;
+            sum1 += i;
+            resultText1 += (i + (i < 25 ? " * " : " is "));
+        }
+        document.getElementById("results1").innerHTML = resultText1 + product1.toLocaleString() + "<br>";
+        document.getElementById("results1").innerHTML += "The result of 5 + 9 + 13 + 17 + 21 + 25 is " + sum1.toLocaleString() + ".";
+
+        // Part 1: While Loop - Sum and Product of every third integer from 3 to 18
+        let product2 = 1;
+        let sum2 = 0;
+        let resultText2 = "The result of ";
+
+        let j = 3;
+        while (j <= 18) {
+            product2 *= j;
+            sum2 += j;
+            resultText2 += (j + (j < 18 ? " * " : " is "));
+            j += 3;
+        }
+        document.getElementById("results2").innerHTML = resultText2 + product2.toLocaleString() + "<br>";
+        document.getElementById("results2").innerHTML += "The result of 3 + 6 + 9 + 12 + 15 + 18 is " + sum2.toLocaleString() + ".";
+    </script>
+
+    <div class="back-link">
+        <a href="hw4.html">Back to Homework 4 Main Page</a>
+    </div>
+</body>
+</html>
 
