@@ -10,8 +10,7 @@ body {
     background-size: cover; 
     background-position: center; 
     background-repeat: no-repeat;
-    background-color: #f0f0f0; /* Fallback color */
-}
+    background-color: #FFFDD0; 
 
 h1 {
     color: #FFFDD0;
@@ -53,7 +52,7 @@ a:hover {
 }
 
 input:focus {
-    background-color: #ffffff; 
+    background-color: #FFFDD0; 
 }
 
 table {
