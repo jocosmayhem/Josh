@@ -104,12 +104,7 @@ button:focus {
 .result {
     white-space: pre; 
     margin-top: 20px;
-    color: #FFFDD0;
-    text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown;
+    color: #f00d0d;
 }
 
 
