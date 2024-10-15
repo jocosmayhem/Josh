@@ -17,15 +17,30 @@ body {
 h1 {
     color: #FFFDD0;
     text-align: center; /* Center the heading */
+    text-shadow: 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; /* brown border */
 }
 
 a {
-    color: #f03434;
+    color: #FFFDD0;
     text-decoration: none;
+    text-shadow: 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; /* brown border */
 }
 
 li {
-    color: #f51313;
+    color: #FFFDD0;
+    text-shadow: 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; /* brown border */
 }
 
 a:hover {
@@ -44,7 +59,7 @@ table {
 }
 
 table, th, td {
-    border: 1px solid black;
+    border: 1px solid brown;
     text-align: left; /* Align text to the left for better readability */
     padding: 8px;
 }
