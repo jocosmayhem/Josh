@@ -34,6 +34,12 @@ a {
          1px  1px 0 brown; /* brown border */
 }
 
+ul {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
 li {
     color: #FFFDD0;
     text-shadow: 
