@@ -115,4 +115,5 @@ button:focus {
 
 .error {
     color: red;
+    text-size-adjust: 150%;
 }
