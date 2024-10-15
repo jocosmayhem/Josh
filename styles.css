@@ -65,9 +65,15 @@ table {
 }
 
 table, th, td {
-    border: 1px solid brown;
-    text-align: left; /* Align text to the left for better readability */
+    border: 1px solid brown; 
+    text-align: left; 
     padding: 8px;
+    color: #FFFDD0; 
+    text-shadow: 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; 
 }
 
 th {
