@@ -104,7 +104,12 @@ button:focus {
     white-space: pre; 
     margin-top: 20px;
     font-family: monospace; 
-    color: red;
+    color: #FFFDD0;
+    text-shadow: 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; /* brown border */
 }
 
 .error {
