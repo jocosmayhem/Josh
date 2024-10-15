@@ -102,11 +102,16 @@ button:focus {
 }
 
 .result {
-    margin: 5px 5px;
+    margin-top: 20px;
     color: #FFFDD0;
     text-shadow: 
         -1px -1px 0 brown,  
          1px -1px 0 brown,
         -1px  1px 0 brown,
          1px  1px 0 brown;
+}
+
+
+.error {
+    color: red;
 }
