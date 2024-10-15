@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -18,7 +19,7 @@ h1 {
 }
 
 a {
-    color: #009900;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -27,7 +28,7 @@ a:hover {
 }
 
 input:focus {
-    background-color: #e0ffff; /* Light cyan on focus */
+    background-color: #ffffff; 
 }
 
 table {
