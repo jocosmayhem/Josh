@@ -62,7 +62,7 @@ table {
     margin-top: 20px;
     border-collapse: collapse;
     margin-bottom: 20px; 
-    
+}
 
 table, th, td {
     border: 1px solid brown; 
@@ -80,6 +80,7 @@ th {
     background-color: #FFFDD0;
 }
 
+/* Optional: add some styling to the button */
 button {
     background-color: #009900;
     color: white;
