@@ -23,16 +23,6 @@ h1 {
          1px  1px 0 brown; /* brown border */
 }
 
-h3 {
-    color: #FFFDD0;
-    text-align: center; 
-    text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; 
-}
-
 a {
     color: #FFFDD0;
     text-decoration: none;
