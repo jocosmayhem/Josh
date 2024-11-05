@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 3 - State Information Lookup for Homework 5">
+    <title>Homework 5 - Part 3</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Part 3 - State Information Lookup</h1>
+
+    <form id="stateForm">
+        <label for="stateInput">Enter State Name or Abbreviation:</label>
+        <input type="text" id="stateInput" name="stateInput"><br><br>
+        
+        <button type="button" onclick="findStateInfo()">Get State Info</button>
+        <button type="reset">Clear</button>
+    </form>
+
+    <div id="stateOutput"></div>
+
+    <script>
+        const states = {
+            'AL': ['Alabama', 'Montgomery', '4,903,185'],
+            'AK': ['Alaska', 'Juneau', '731,545'],
+            'AZ': ['Arizona', 'Phoenix', '7,278,717'],
+            'AR': ['Arkansas', 'Little Rock', '3,017,825'],
+            'CA': ['California', 'Sacramento', '39,512,223'],
+            'CO': ['Colorado', 'Denver', '5,758,736']
+        };
+
+        function findStateInfo() {
+            const input = document.getElementById('stateInput').value.trim().toUpperCase();
+            const output = document.getElementById('stateOutput');
+
+            if (input in states || Object.values(states).some(state => state[0].toUpperCase() === input)) {
+                const stateData = input in states ? states[input] : Object.entries(states).find(([_, data]) => data[0].toUpperCase() === input)[1];
+                output.innerHTML = `<p>Thanks for your inquiry, here is the information you requested:<br>
+                                    State Abbr = ${input in states ? input : Object.keys(states).find(key => states[key][0].toUpperCase() === input)}<br>
+                                    State Name = ${stateData[0]}<br>
+                                    Capital = ${stateData[1]}<br>
+                                    Population = ${stateData[2]}</p>`;
+            } else {
+                output.innerHTML = '<p style="color: red;">Sorry, we do not have information about this state! We only have information about AL, AK, AZ, AR, CA, and CO.</p>';
+            }
+        }
+    </script>
+
+    <div class="back-link">
+        <a href="hw5.html">Back to Homework 5 Main Page</a>
+    </div>
+</body>
+</html>
