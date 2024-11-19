@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1 - Number Validation and Calculations">
+    <title>Part 1 - Number Validation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Number Validation and Calculations</h1>
+    
+    <div id="formContainer">
+        <form id="numberForm">
+            <label for="numberInput">Enter a number with at least 4 decimals:</label><br>
+            <input type="text" id="numberInput" required><br><br>
+            <button type="button" onclick="processNumber()">Submit</button>
+            <button type="reset">Clear</button>
+        </form>
+    </div>
+    
+    <div id="resultArea"></div>
+
+    <script>
+        function processNumber() {
+            const input = document.getElementById('numberInput').value;
+            const resultArea = document.getElementById('resultArea');
+            const number = parseFloat(input);
+
+            if (isNaN(number) || !/\.\d{4,}$/.test(input)) {
+                resultArea.innerHTML = `<p style="color: red;">Error: Please enter a number with at least 4 decimal places.</p>`;
+                return;
+            }
+
+            const roundedInt = Math.round(number);
+            const sqrtRounded = Math.round(Math.sqrt(number));
+            const roundedTenths = number.toFixed(1);
+            const roundedHundredths = number.toFixed(2);
+            const roundedThousandths = number.toFixed(3);
+
+            resultArea.innerHTML = `
+                You typed number: ${number}<br>
+                Rounded to the nearest integer: ${roundedInt}<br>
+                Square root rounded to integer: ${sqrtRounded}<br>
+                Rounded to the nearest 10th: ${roundedTenths}<br>
+                Rounded to the nearest 100th: ${roundedHundredths}<br>
+                Rounded to the nearest 1000th: ${roundedThousandths}
+            `;
+        }
+    </script>
+
+    <div class="back-link">
+        <a href="hw6.html">Back to Homework 6</a>
+    </div>
+</body>
+</html>

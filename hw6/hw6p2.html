@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 - Character Search in Content">
+    <title>Part 2 - Character Search</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Character Search in Content</h1>
+    
+    <div id="formContainer">
+        <form id="charSearchForm">
+            <label for="longContent">Enter content:</label><br>
+            <textarea id="longContent" rows="5" cols="30"></textarea><br><br>
+            <label for="searchChar">Enter a character to search:</label><br>
+            <input type="text" id="searchChar" maxlength="1"><br><br>
+            <button type="button" onclick="searchCharacter()">Submit</button>
+        </form>
+    </div>
+    
+    <div id="searchResult"></div>
+
+    <script>
+        function searchCharacter() {
+            const content = document.getElementById('longContent').value;
+            const char = document.getElementById('searchChar').value;
+            const resultArea = document.getElementById('searchResult');
+
+            if (!char) {
+                resultArea.innerHTML = `<p style="color: red;">Error: Please enter a single character to search.</p>`;
+                return;
+            }
+
+            const count = content.toLowerCase().split(char.toLowerCase()).length - 1;
+
+            if (count > 0) {
+                resultArea.innerHTML = `The character "${char}" appears ${count} times in the content.`;
+            } else {
+                const popup = window.open("", "", "width=300,height=100");
+                popup.document.write(`
+                    <p>Search character "${char}" not found in the content.</p>
+                    <button onclick="window.close()">Close</button>
+                `);
+            }
+        }
+    </script>
+
+    <div class="back-link">
+        <a href="hw6.html">Back to Homework 6</a>
+    </div>
+</body>
+</html>

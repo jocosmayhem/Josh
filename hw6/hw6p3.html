@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 3 - Phone Number Validation">
+    <title>Part 3 - Phone Number Validation</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Phone Number Validation</h1>
+    
+    <div id="formContainer">
+        <form id="phoneForm">
+            <label for="phoneInput">Enter phone number (format: (999) 999-9999):</label><br>
+            <input type="text" id="phoneInput"><br><br>
+            <button type="button" onclick="validatePhone()">Submit</button>
+            <button type="reset">Clear</button>
+        </form>
+    </div>
+    
+    <div id="phoneResult"></div>
+
+    <script>
+        function validatePhone() {
+            const phone = document.getElementById('phoneInput').value;
+            const resultArea = document.getElementById('phoneResult');
+            const phoneRegex = /^\(\d{3}\) \d{3}-\d{4}$/;
+
+            if (!phoneRegex.test(phone)) {
+                resultArea.innerHTML = `<p style="color: red;">Error: Please enter a valid phone number in the format (999) 999-9999.</p>`;
+            } else {
+                resultArea.innerHTML = `Thank you! We will contact you soon at ${phone}.`;
+            }
+        }
+    </script>
+
+    <div class="back-link">
+        <a href="hw6.html">Back to Homework 6</a>
+    </div>
+</body>
+</html>
