@@ -35,7 +35,7 @@ h1 {
 a {
     color: forestgreen;
     text-decoration: none;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 1px black; 
 }
 
 ul {
@@ -46,7 +46,7 @@ ul {
 
 li {
     color: forestgreen;
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 1px black; 
 }
 
 a:hover {
@@ -71,7 +71,7 @@ table, th, td {
     text-align: left; 
     padding: 8px;
     color: forestgreen;  
-    text-shadow: 1px 1px 2px black; 
+    text-shadow: 1px 1px 1px black; 
 }
 
 th {
@@ -104,7 +104,7 @@ button:focus {
     margin-top: 20px;
     font-family: monospace; 
     color: forestgreen;
-    text-shadow: 1px 1px 2px black; /* Optional: Add outline to result text */
+    text-shadow: 1px 1px 1px black; /* Optional: Add outline to result text */
 }
 
 .error {
