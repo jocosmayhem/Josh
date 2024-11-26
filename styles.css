@@ -29,13 +29,11 @@ body::after {
 h1 {
     color: forestgreen;
     text-align: center; /* Center the heading */
-    text-shadow: 
 }
 
 a {
     color: forestgreen;
     text-decoration: none;
-    text-shadow: 
 }
 
 ul {
