@@ -51,18 +51,60 @@
         const styledContent = document.getElementById('styledContent');
         const form = document.getElementById('styleForm');
 
+        // Retrieve cookies if available (on page load)
+        window.onload = function() {
+            const storedBackground = getCookie('background');
+            const storedFontSize = getCookie('fontSize');
+            const storedStyles = getCookie('styles');
+
+            if (storedBackground) {
+                styledContent.style.backgroundColor = storedBackground;
+                document.querySelector(`input[name="background"][value="${storedBackground}"]`).checked = true;
+            }
+            if (storedFontSize) {
+                styledContent.style.fontSize = storedFontSize;
+                document.querySelector(`select[name="fontSize"]`).value = storedFontSize;
+            }
+            if (storedStyles) {
+                storedStyles.split(',').forEach(style => {
+                    styledContent.style[style] = style;
+                    document.querySelector(`input[name="style"][value="${style}"]`).checked = true;
+                });
+            }
+        };
+
         form.addEventListener('change', () => {
             const background = form.querySelector('input[name="background"]:checked')?.value;
             const fontSize = form.querySelector('select[name="fontSize"]').value;
 
+            // Apply styles immediately
             styledContent.style.backgroundColor = background || '';
             styledContent.style.fontSize = fontSize;
 
+            // Collect checked styles
             const styles = Array.from(form.querySelectorAll('input[name="style"]:checked')).map(input => input.value);
             styledContent.style.fontWeight = styles.includes('bold') ? 'bold' : '';
             styledContent.style.fontStyle = styles.includes('italic') ? 'italic' : '';
             styledContent.style.textDecoration = styles.includes('underline') ? 'underline' : '';
+
+            document.cookie = `background=${background}; path=/`;
+            document.cookie = `fontSize=${fontSize}; path=/`;
+            document.cookie = `styles=${styles.join(',')}; path=/`;
         });
+
+       
+        function getCookie(name) {
+            const cookieArr = document.cookie.split(';');
+            for (let i = 0; i < cookieArr.length; i++) {
+                const cookie = cookieArr[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return '';
+        }
+
+        // Cookies will automatically be deleted when the browser is closed (session cookies)
     </script>
 
     <div class="back-link">
