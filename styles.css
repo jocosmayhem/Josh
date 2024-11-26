@@ -30,20 +30,12 @@ h1 {
     color: forestgreen;
     text-align: center; /* Center the heading */
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown;
 }
 
 a {
     color: forestgreen;
     text-decoration: none;
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; 
 }
 
 ul {
@@ -55,10 +47,6 @@ ul {
 li {
     color: forestgreen;
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; 
 }
 
 a:hover {
@@ -81,12 +69,7 @@ table, th, td {
     border: 1px solid brown; 
     text-align: left; 
     padding: 8px;
-    color: forestgreen; 
-    text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; 
+    color: forestgreen;  
 }
 
 th {
@@ -118,11 +101,6 @@ button:focus {
     margin-top: 20px;
     font-family: monospace; 
     color: forestgreen;
-    text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; /* brown border */
 }
 
 .error {
