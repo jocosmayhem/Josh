@@ -30,20 +30,20 @@ h1 {
     color: brown;
     text-align: center; /* Center the heading */
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; /* brown border */
+        -1px -1px 0 forestgreen,  
+         1px -1px 0 forestgreen,
+        -1px  1px 0 forestgreen,
+         1px  1px 0 forestgreen;
 }
 
 a {
     color: brown;
     text-decoration: none;
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; /* brown border */
+        -1px -1px 0 forestgreen,  
+         1px -1px 0 forestgreen,
+        -1px  1px 0 forestgreen,
+         1px  1px 0 forestgreen; 
 }
 
 ul {
@@ -55,10 +55,10 @@ ul {
 li {
     color: brown;
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; /* brown border */
+        -1px -1px 0 forestgreen,  
+         1px -1px 0 forestgreen,
+        -1px  1px 0 forestgreen,
+         1px  1px 0 forestgreen; 
 }
 
 a:hover {
@@ -78,15 +78,15 @@ table {
 }
 
 table, th, td {
-    border: 1px solid brown; 
+    border: 1px solid forestgreen; 
     text-align: left; 
     padding: 8px;
-    color: #FFFDD0; 
+    color: brown; 
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; 
+        -1px -1px 0 forestgreen,  
+         1px -1px 0 forestgreen,
+        -1px  1px 0 forestgreen,
+         1px  1px 0 forestgreen; 
 }
 
 th {
@@ -119,23 +119,14 @@ button:focus {
     font-family: monospace; 
     color: brown;
     text-shadow: 
-        -1px -1px 0 brown,  
-         1px -1px 0 brown,
-        -1px  1px 0 brown,
-         1px  1px 0 brown; /* brown border */
+        -1px -1px 0 forestgreen,  
+         1px -1px 0 forestgreen,
+        -1px  1px 0 forestgreen,
+         1px  1px 0 forestgreen; /* brown border */
 }
 
 .error {
     color: red;
 }
 
-.text-overlay {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-    padding: 20px;               /* Space inside the container */
-    border-radius: 8px;          /* Rounded corners for aesthetics */
-    margin: 10px auto;           /* Center the container with some spacing */
-    max-width: 800px;            /* Set a maximum width for the content area */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for emphasis */
-    backdrop-filter: blur(5px);  /* Subtle blur effect for supported browsers */
-  }
 /* Additional containers will be added later */
