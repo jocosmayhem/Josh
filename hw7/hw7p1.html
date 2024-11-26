@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1 - Style Application">
+    <title>Part 1 - Style Application</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Style Application</h1>
+    
+    <div id="formContainer">
+        <form id="styleForm">
+            <h2>Choose Background Color:</h2>
+            <label><input type="radio" name="background" value="lightblue"> Light Blue</label><br>
+            <label><input type="radio" name="background" value="lightgreen"> Light Green</label><br><br>
+
+            <h2>Choose Text Style:</h2>
+            <label><input type="checkbox" name="style" value="bold"> Bold</label><br>
+            <label><input type="checkbox" name="style" value="italic"> Italic</label><br>
+            <label><input type="checkbox" name="style" value="underline"> Underline</label><br><br>
+
+            <h2>Choose Font Size:</h2>
+            <select name="fontSize">
+                <option value="100%">100%</option>
+                <option value="120%">120%</option>
+                <option value="150%">150%</option>
+            </select>
+        </form>
+    </div>
+    
+    <div id="styledContent">
+        <h2>Styled Content Area</h2>
+        <p>This is the first paragraph.</p>
+        <p>This is the second paragraph.</p>
+        <p>This is the third paragraph.</p>
+    </div>
+
+    <script>
+        const styledContent = document.getElementById('styledContent');
+        const form = document.getElementById('styleForm');
+
+        form.addEventListener('change', () => {
+            const background = form.querySelector('input[name="background"]:checked')?.value;
+            const fontSize = form.querySelector('select[name="fontSize"]').value;
+
+            styledContent.style.backgroundColor = background || '';
+            styledContent.style.fontSize = fontSize;
+
+            const styles = Array.from(form.querySelectorAll('input[name="style"]:checked')).map(input => input.value);
+            styledContent.style.fontWeight = styles.includes('bold') ? 'bold' : '';
+            styledContent.style.fontStyle = styles.includes('italic') ? 'italic' : '';
+            styledContent.style.textDecoration = styles.includes('underline') ? 'underline' : '';
+        });
+    </script>
+
+    <div class="back-link">
+        <a href="hw7.html">Back to Homework 7</a>
+    </div>
+</body>
+</html>

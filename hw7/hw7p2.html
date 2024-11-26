@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 - Cookie Management">
+    <title>Part 2 - Cookie Management</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <h1>Cookie Management</h1>
+    
+    <div id="formContainer"></div>
+
+    <script>
+        const formContainer = document.getElementById('formContainer');
+
+        function setCookie(name, value) {
+            document.cookie = `${name}=${value}; path=/`;
+        }
+
+        function getCookie(name) {
+            const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+                const [key, val] = cookie.split('=');
+                acc[key] = val;
+                return acc;
+            }, {});
+            return cookies[name];
+        }
+
+        const name = getCookie('name');
+        const username = getCookie('username');
+
+        if (name && username) {
+            formContainer.innerHTML = `<p>Welcome back, <strong>${name}</strong> (${username})!</p>`;
+        } else {
+            formContainer.innerHTML = `
+                <form id="cookieForm">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" required><br><br>
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" required><br><br>
+                    <button type="submit">Save</button>
+                </form>
+            `;
+
+            document.getElementById('cookieForm').addEventListener('submit', event => {
+                event.preventDefault();
+                const nameInput = document.getElementById('name').value;
+                const usernameInput = document.getElementById('username').value;
+                setCookie('name', nameInput);
+                setCookie('username', usernameInput);
+                location.reload();
+            });
+        }
+    </script>
+
+    <div class="back-link">
+        <a href="index.html">Back to Homework 7</a>
+    </div>
+</body>
+</html>
