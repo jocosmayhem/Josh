@@ -27,23 +27,23 @@ body::after {
 }
 
 h1 {
-    color: brown;
+    color: forestgreen;
     text-align: center; /* Center the heading */
     text-shadow: 
-        -1px -1px 0 forestgreen,  
-         1px -1px 0 forestgreen,
-        -1px  1px 0 forestgreen,
-         1px  1px 0 forestgreen;
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown;
 }
 
 a {
-    color: brown;
+    color: forestgreen;
     text-decoration: none;
     text-shadow: 
-        -1px -1px 0 forestgreen,  
-         1px -1px 0 forestgreen,
-        -1px  1px 0 forestgreen,
-         1px  1px 0 forestgreen; 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; 
 }
 
 ul {
@@ -53,12 +53,12 @@ ul {
 }
 
 li {
-    color: brown;
+    color: forestgreen;
     text-shadow: 
-        -1px -1px 0 forestgreen,  
-         1px -1px 0 forestgreen,
-        -1px  1px 0 forestgreen,
-         1px  1px 0 forestgreen; 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; 
 }
 
 a:hover {
@@ -78,15 +78,15 @@ table {
 }
 
 table, th, td {
-    border: 1px solid forestgreen; 
+    border: 1px solid brown; 
     text-align: left; 
     padding: 8px;
-    color: brown; 
+    color: forestgreen; 
     text-shadow: 
-        -1px -1px 0 forestgreen,  
-         1px -1px 0 forestgreen,
-        -1px  1px 0 forestgreen,
-         1px  1px 0 forestgreen; 
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; 
 }
 
 th {
@@ -117,12 +117,12 @@ button:focus {
     white-space: pre; 
     margin-top: 20px;
     font-family: monospace; 
-    color: brown;
+    color: forestgreen;
     text-shadow: 
-        -1px -1px 0 forestgreen,  
-         1px -1px 0 forestgreen,
-        -1px  1px 0 forestgreen,
-         1px  1px 0 forestgreen; /* brown border */
+        -1px -1px 0 brown,  
+         1px -1px 0 brown,
+        -1px  1px 0 brown,
+         1px  1px 0 brown; /* brown border */
 }
 
 .error {
