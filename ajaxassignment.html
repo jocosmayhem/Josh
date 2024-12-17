@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homework 8 - AJAX Application</title>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Homework 8 - AJAX Application</h1>
+  <p><a href="../index.html">Back to Homework 1</a></p>
+
+  <button type="button" onclick="loadDoc()">Get CD collection</button>
+  <br><br>
+  <table id="demo"></table>
+
+  <script>
+    function loadDoc() {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onload = function () {
+        myFunction(this);
+      };
+      xhttp.open("GET", "cd_catalog.xml");
+      xhttp.send();
+    }
+
+    function myFunction(xml) {
+      const xmlDoc = xml.responseXML;
+      const x = xmlDoc.getElementsByTagName("CD");
+      let table = "<tr><th>Artist</th><th>Title</th></tr>";
+      for (let i = 0; i < x.length; i++) {
+        table += "<tr><td>" +
+          x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+          "</td><td>" +
+          x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+          "</td></tr>";
+      }
+      document.getElementById("demo").innerHTML = table;
+    }
+  </script>
+
+  <h2>Explanation of AJAX</h2>
+  <p>
+    The AJAX functionality in this code is implemented using the `XMLHttpRequest` object.
+    When the "Get CD collection" button is clicked, the `loadDoc` function is triggered.
+    This function creates an `XMLHttpRequest` object and sends an HTTP GET request to fetch the `cd_catalog.xml` file.
+    Once the file is successfully loaded, the `onload` event handler calls the `myFunction` function, which processes the XML data.
+  </p>
+  <p>
+    Inside `myFunction`, the XML response is parsed using the `responseXML` property, and the `<CD>` elements are accessed using `getElementsByTagName`.
+    A table is dynamically generated with the `Artist` and `Title` of each CD and inserted into the HTML using the `innerHTML` property of the `<table>` element.
+  </p>
+
+  <h2>REST API</h2>
+  <p>
+    I chose the OpenWeatherMap API for this section. This API provides comprehensive weather data for locations worldwide in JSON format. 
+    Developers must obtain an API key to use the service. The API offers a free tier with limited features and paid plans for advanced functionality such as high-frequency updates and historical data access.
+    The OpenWeatherMap API documentation is available on the 
+    <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap API Documentation</a> page.
+  </p>
+
+  <h2>Example: Fetch Current Weather</h2>
+  <p>
+    Below is a simple example that fetches and displays the current temperature for a specified city using the OpenWeatherMap API. Replace `YOUR_API_KEY` with a valid API key.
+  </p>
+
+  <input type="text" id="city" placeholder="Enter city name">
+  <button onclick="getWeather()">Get Weather</button>
+  <p id="weather"></p>
+
+  <script>
+    function getWeather() {
+      const city = document.getElementById("city").value;
+      const apiKey = "YOUR_API_KEY";
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const weatherInfo = `Temperature in ${data.name}: ${data.main.temp}°C`;
+          document.getElementById("weather").textContent = weatherInfo;
+        })
+        .catch(error => {
+          document.getElementById("weather").textContent = "Error fetching weather data.";
+        });
+    }
+  </script>
+</body>
+</html>
