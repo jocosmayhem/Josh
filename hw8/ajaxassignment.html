@@ -48,14 +48,14 @@
 
   <h2>Explanation of AJAX</h2>
   <p>
-    The AJAX functionality in this code is implemented using the `XMLHttpRequest` object.
-    When the "Get CD collection" button is clicked, the `loadDoc` function is triggered.
-    This function creates an `XMLHttpRequest` object and sends an HTTP GET request to fetch the `cd_catalog.xml` file.
-    Once the file is successfully loaded, the `onload` event handler calls the `myFunction` function, which processes the XML data.
+    The AJAX functionality in this code is implemented using the XMLHttpRequest object.
+    When the "Get CD collection" button is clicked, the loadDoc function is triggered.
+    This function creates an XMLHttpRequest object and sends an HTTP GET request to fetch the cd_catalog.xml file.
+    Once the file is successfully loaded, the onload event handler calls the myFunction function, which processes the XML data.
   </p>
   <p>
-    Inside `myFunction`, the XML response is parsed using the `responseXML` property, and the `<CD>` elements are accessed using `getElementsByTagName`.
-    A table is dynamically generated with the `Artist` and `Title` of each CD and inserted into the HTML using the `innerHTML` property of the `<table>` element.
+    Inside myFunction, the XML response is parsed using the responseXML property, and the CD elements are accessed using getElementsByTagName.
+    A table is dynamically generated with the Artist and Title of each CD and inserted into the HTML using the innerHTML property of the table element.
   </p>
 
   <h2>REST API</h2>

@@ -26,15 +26,9 @@ body::after {
     z-index: -1; /* Ensure the blurred background stays behind the content */
 }
 
-h1, h2 {
+h1, h2, a, p{
     color: forestgreen;
     text-align: center; /* Center the heading */
-    text-shadow: 1px 1px 1px black; 
-}
-
-a {
-    color: forestgreen;
-    text-decoration: none;
     text-shadow: 1px 1px 1px black; 
 }
 
